@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Regular.ttf') format('ttf'); 
+    font-weight: 400; 
+    font-style: normal;
+    font-display: swap; 
+}
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Bold.ttf') format('ttf');
+    font-weight: 700; 
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+
+h1, h2, p, li{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; 
+}
+p, li{
+    font-weight: 400; 
+}
+body {
+    background-color: #EDEDED;
+    overflow: hidden; 
+    height: 100vh;
+}
+.head{
+      background-color: #1C140DB2;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      height: 148px;
+      position: fixed;
+      z-index: 3;
+}
+.q{
+    color: #FFF;
+    font-size: 50px;
+    padding-top: 24px;
+}
+.w4{
+    color: #5D9163;
+    font-size: 30px;
+    padding-bottom: 16px;
+}
+.w5{
+    color: #8AA9BD;
+    font-size: 30px;
+    padding-bottom: 16px;
+}
+.w{
+    color:  #E8DDA2;
+    font-size: 30px;
+    padding-bottom: 16px;
+}
+header {
+    width: 100%;
+    height: 1080px;
+    background-image: url(./images/header_back.png);    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative; 
+    overflow-y: auto; 
+}
+.main {
+    background-color: #1C140D;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    border-radius: 67px;
+    margin: 20px auto 0;
+    /* margin: 249px auto 0; */
+    position: relative; 
+    z-index: 2; 
+    
+}
+header {
+    height: 100vh;
+    overflow-y: auto;
+}
+path {
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+path:hover {
+    fill: #FFF;
+    filter: drop-shadow(0 0 5px white) brightness(1.2);
+    transform: scale(1.005);
+}
+.text{
+    color: #fff;
+    font-size: 20px;
+    width: 80%;
+    text-align: justify;
+    line-height: 30px;
+    letter-spacing: 0;
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+.map{
+    width: 60%;
+    
+}
+.w2{
+    text-align: center;
+    margin-top: 40px;
+}
+.t1{
+    width: 50%;
+}
+.w3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700; 
+    color: #fff;
+}
+.text2{
+    color: #fff;
+    text-align: center;
+    text-align: justify;
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 60px;
+    margin-left: 5%;
+}
+.v{
+    margin-top: 60px;
+}
+/* table, th, tr{
+    border: 1px solid white;
+} */
+/* --- ПОЛЗУНКОВЫЙ ПЕРЕКЛЮЧАТЕЛЬ СТРАНИЦ --- */
+.page-slider-container {
+    width: 80%;
+    margin: 20px auto; /* Центрирование и отступ сверху/снизу */
+    position: relative;
+    z-index: 5;
+    /* Добавляем отступ сверху, чтобы не прилипало к шапке */
+    margin-top: 170px; /* Учитываем высоту шапки 148px + небольшой отступ */
+}
+
+.page-slider {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #1C140D;
+    background-color: rgba(28, 20, 13, 0.7); /* Прозрачность 0.7 как у .main */
+    border-radius: 20px; /* Скругление со всех сторон 20px */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Легкая тень для глубины */
+}
+
+/* Ползунок */
+.slider-thumb {
+    position: absolute;
+    width: 33.33%; /* Занимает ровно треть от ширины родителя */
+    height: 20px;
+    background-color: #ffffff; /* Темный цвет */
+    background-color: #ffffff; /* Убираем прозрачность у ползунка для контраста */
+    border-radius: 20px; /* Такое же скругление 20px */
+    top: 0;
+    left: 0; /* Начальная позиция (первая страница) */
+    transition: left 0.3s ease; /* Плавное перемещение */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Тень для объема */
+    z-index: 1;
+    border: 1px solid rgba(232, 221, 162, 0.3); /* Тонкая обводка цветом заголовков */
+}
+
+/* Позиции (кликабельные области) */
+.slider-position {
+    flex: 1; /* Каждая занимает равную ширину (33.33%) */
+    text-align: center;
+    color: #E8DDA2; /* Золотистый цвет как у ваших заголовков h2.w */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px; /* По высоте слайдера */
+    position: relative;
+    z-index: 2; /* Чтобы текст был поверх ползунка */
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Читаемость на темном фоне */
+    letter-spacing: 1px; /* Немного разреженный текст */
+}
+
+/* Эффект при наведении на позиции */
+.slider-position:hover {
+    color: #FFF;
+    text-shadow: 0 0 8px rgba(232, 221, 162, 0.5);
+}
+
+/* Когда позиция активна - делаем текст ярче */
+.slider-position.active {
+    color: #FFF;
+    font-weight: 700;
+    text-shadow: 0 0 10px #E8DDA2;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .page-slider-container {
+        width: 90%; /* Чуть шире на мобильных */
+        margin-top: 160px;
+    }
+    
+    .slider-position {
+        font-size: 12px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .page-slider-container {
+        margin-top: 150px;
+    }
+}
+.svgFill2 > path{
+    fill: #5D9163;
+}
+.svgFill3 > path{
+    fill: #8AA9BD;
+}
